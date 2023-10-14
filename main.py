@@ -1,5 +1,4 @@
-from typing import Union
-
+import os
 from fastapi import FastAPI
 
 environment = os.environ.get('environment', 'dev')
@@ -13,8 +12,8 @@ def read_root():
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+def read_item(item_id: int):
+    return {"item_id": item_id}
 
 
 if __name__ == '__main__':
