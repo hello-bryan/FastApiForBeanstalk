@@ -6,7 +6,7 @@ environment = os.environ.get('environment', 'dev')
 app = FastAPI(redoc_url='/docs')
 
 
-@app.get("/")
+@app.get("/hello")
 def read_root():
     return {"Hello": "World"}
 
